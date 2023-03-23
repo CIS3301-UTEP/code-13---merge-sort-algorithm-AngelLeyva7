@@ -15,17 +15,17 @@ def get_merge_sorted_list(unsorted_list):
     half_2 = get_merge_sorted_list(second_half)
 
     sorted_list = []
-    i = j = 0
-    while i < len(half_1) and j < len(half_2):
-        if half_1[i] <= half_2[j]:
-            sorted_list.append(half_1[i])
-            i += 1
+    primero = segundo = 0
+    while primero < len(half_1) and segundo < len(half_2):
+        if half_1[primero] <= half_2[segundo]:
+            sorted_list.append(half_1[primero])
+            primero += 1
         else:
-            sorted_list.append(half_2[j])
-            j += 1
+            sorted_list.append(half_2[segundo])
+            segundo += 1
 
-    sorted_list += half_1[i:]
-    sorted_list += half_2[j:]
+    sorted_list += half_1[primero:]
+    sorted_list += half_2[segundo:]
 
     return sorted_list
 
